@@ -275,7 +275,7 @@ a:active {
 }
 .navbar-brand img {
   height: 140px;
-  margin-top: calc(-50% - 2rem);
+  margin-top: calc(-15% - 2rem);
   transform: translateY(50%);
   max-width: none;
 }
