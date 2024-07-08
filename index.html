@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cilok Baa - Cilok Kekinian Cirebon</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nosifer&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nosifer', cursive;
+            line-height: 1.6;
+            color: #ffffff;
+            background-color: #121212;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        header {
+            background-color: #FF6B6B;
+            color: #000;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-circle {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.1);
+            animation: moveCircles 20s infinite linear;
+        }
+
+        .header-circle-1 {
+            top: -150px;
+            left: -150px;
+        }
+
+        .header-circle-2 {
+            bottom: -150px;
+            right: -150px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        header img {
+            max-width: 150px;
+            height: auto;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        nav {
+            position: relative;
+            z-index: 1;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #000;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #4ECDC4;
+        }
+
+        section {
+            padding: 60px 0;
+            position: relative;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #FF6B6B;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #FF6B6B;
+            margin: 10px auto 0;
+        }
+
+        .menu-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .menu-item {
+            background-color: #222;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .menu-item-content {
+            padding: 20px;
+        }
+
+        .menu-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #FF6B6B;
+        }
+
+        .menu-item p {
+            font-size: 0.9rem;
+            color: #ddd;
+        }
+
+        .toping-section {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .toping-image {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .about {
+            background-color: #4ECDC4;
+            color: #000;
+        }
+
+        .about-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+            padding-right: 30px;
+        }
+
+        .about-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-circle {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.2);
+            animation: rotateCircles 15s infinite linear;
+        }
+
+        .about-circle-1 {
+            top: -20px;
+            left: -20px;
+        }
+
+        .about-circle-2 {
+            bottom: -20px;
+            right: -20px;
+        }
+
+        .contact {
+            background-color: #fff;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            flex-basis: calc(50% - 15px);
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #FF6B6B;
+        }
+
+        .contact-item p,
+        .contact-item a {
+            font-size: 0.9rem;
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #FF6B6B;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-circle {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        .footer-circle-1 {
+            top: -100px;
+            left: -100px;
+        }
+
+        .footer-circle-2 {
+            bottom: -100px;
+            right: -100px;
+        }
+
+        @media (max-width: 1024px) {
+            .menu-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-text,
+            .about-image {
+                width: 100%;
+                padding: 0;
+                margin-bottom: 30px;
+            }
+
+            .contact-item {
+                flex-basis: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .menu-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes moveCircles {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(200px, 200px);
+            }
+        }
+
+        @keyframes rotateCircles {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-circle header-circle-1"></div>
+        <div class="header-circle header-circle-2"></div>
+        <div class="container">
+            <img src="images/logo_baner.jpg" alt="Cilok Baa Logo">
+            <h1>Cilok Baa</h1>
+            <nav>
+                <ul>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#tentang">Tentang Kami</a></li>
+                    <li><a href="#kontak">Kontak Kami</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="menu" class="container">
+        <h2>Menu</h2>
+        <div class="menu-container">
+            <div class="menu-item">
+                <img src="images/Pancong_ButoIjoGreentea.jpg" alt="Pancong Buto Ijo Greentea">
+                <div class="menu-item-content">
+                    <h3>Pancong Buto Ijo Greentea</h3>
+                    <p>Lezatnya cita rasa greentea dengan taburan kelapa yang gurih.</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="images/Pancong_KuburanOreo.jpg" alt="Pancong Kuburan Oreo">
+                <div class="menu-item-content">
+                    <h3>Pancong Kuburan Oreo</h3>
+                    <p>Oreo yang lezat dipadu dengan kelembutan adonan pancong.</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="images/Pancong_KuyangTIramisu.jpg" alt="Pancong Kuyang Tiramisu">
+                <div class="menu-item-content">
+                    <h3>Pancong Kuyang Tiramisu</h3>
+                    <p>Kelezatan tiramisu dalam setiap gigitan pancong.</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="images/Pancong_PocongOriginal.jpg" alt="Pancong Pocong Original">
+                <div class="menu-item-content">
+                    <h3>Pancong Pocong Original</h3>
+                    <p>Rasa asli pancong yang tak pernah tergantikan.</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="images/Pancong_GenderuwoMeses.jpg" alt="Pancong Genderuwo Meses">
+                <div class="menu-item-content">
+                    <h3>Pancong Genderuwo Meses</h3>
+                    <p>Meses yang melimpah memberikan kenikmatan ekstra.</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="images/Pancong_KuntilanakKeju.jpg" alt="Pancong Kuntilanak Keju">
+                <div class="menu-item-content">
+                    <h3>Pancong Kuntilanak Keju</h3>
+                    <p>Keju yang meleleh sempurna di atas pancong hangat.</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="images/Pancong_MumiRegal.jpg" alt="Pancong Mumi Regal">
+                <div class="menu-item-content">
+                    <h3>Pancong Mumi Regal</h3>
+                    <p>Kombinasi regal yang menggoda dan pancong yang empuk.</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="images/Pancong_SimanisMilo.jpg" alt="Pancong Simanis Milo">
+                <div class="menu-item-content">
+                    <h3>Pancong Simanis Milo</h3>
+                    <p>Milo manis yang menyatu sempurna dengan pancong.</p>
+                </div>
+            </div>
+        </div>
+        <div class="toping-section">
+            <h2>Topping</h2>
+            <img src="images/Toping.jpg" alt="Toping" class="toping-image">
+        </div>
+    </section>
+
+    <section id="tentang" class="about container">
+        <h2>Tentang Kami</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Cilok Baa hadir sebagai pilihan cilok kekinian di Cirebon yang menggabungkan cita rasa tradisional dengan sentuhan modern. Kami berkomitmen untuk menyajikan cilok dengan kualitas terbaik dan rasa yang tak terlupakan.</p>
+            </div>
+            <div class="about-image">
+                <img src="images/logo.png" alt="Cilok Baa Logo">
+                <div class="about-circle about-circle-1"></div>
+                <div class="about-circle about-circle-2"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontak" class="contact container">
+        <h2>Kontak Kami</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <h3>Alamat</h3>
+                <p>Jalan Contoh No. 123, Cirebon</p>
+            </div>
+            <div class="contact-item">
+                <h3>Kontak Person / WhatsApp</h3>
+                <p><a href="https://wa.me/6281234567890">+62 812-3456-7890</a></p>
+            </div>
+            <div class="contact-item">
+                <h3>Instagram</h3>
+                <p><a href="https://instagram.com/cilokbaa">instagram.com/cilokbaa</a></p>
+            </div>
+            <div class="contact-item">
+                <h3>TikTok</h3>
+                <p><a href="https://tiktok.com/@cilokbaa">@cilokbaa</a></p>
+            </div>
+            <div class="contact-item">
+                <h3>Online Order</h3>
+                <p><a href="https://order.cilokbaa.com">order.cilokbaa.com</a></p>
+            </div>
+            <div class="contact-item">
+                <h3>Maps</h3>
+                <p><a href="https://maps.google.com/?q=Jalan Contoh No. 123, Cirebon">Lihat di Google Maps</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-circle footer-circle-1"></div>
+        <div class="footer-circle footer-circle-2"></div>
+        <p>&copy; 2024 Cilok Baa. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>
