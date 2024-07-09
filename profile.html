@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Owner</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body style="background-color: #f9f9f9;" class="flex items-center justify-center min-h-screen">
+
+    <!-- Tombol Kembali -->
+    <div class="absolute top-4 left-4">
+        <button onclick="window.history.back()" class="text-black px-4 py-2 rounded hover:bg-blue-600 hover:text-white">Kembali</button>
+    </div>
+
+    <!-- Container -->
+    <div class="max-w-2xl w-full flex flex-col items-center h-full bg-white rounded-lg shadow-lg p-6">
+        
+        <!-- Foto Owner -->
+        <div class="w-full flex justify-center mb-6">
+            <img class="w-80 h-80 border-4 border-gray-300 rounded-lg" src="gambar1.jpg" alt="Foto Owner">
+        </div>
+
+        <!-- Informasi Owner -->
+        <div class="w-full">
+            <h2 class="text-4xl font-semibold text-gray-800 text-center">Bayu Setyawan</h2>
+            <div class="mt-4 text-zinc-400 flex justify-start">
+                <strong class="w-32">Alamat</strong> <span class="mr-2">:</span>jln. Sabrang permai blok a4 no.35B,kalikoa
+            </div>
+            <div class="mt-4 text-zinc-400 flex justify-start">
+                <strong class="w-32">TTL</strong> <span class="mr-2">:</span>Sukoharjo,19 desember 1987
+            </div>
+            <div class="mt-2 text-zinc-400 flex justify-start">
+                <strong class="w-32">Status</strong> <span class="mr-2">:</span> Menikah
+            </div>
+            <div class="mt-2 text-zinc-400 flex justify-start">
+                <strong class="w-32">Pendidikan</strong> <span class="mr-2">:</span> S1
+            </div>
+            <div class="mt-2 text-zinc-400 flex justify-start">
+                <strong class="w-32">Pengalaman</strong> <span class="mr-2">:</span>
+                <ul class="list-disc ml-8">
+                    <li>Back office progress claim asuransi kendaraan sinarmas (2012-2013)</li>
+                    <li>Marketing PT. Surya Madistrindo (Gudang Garam) tahun 2013</li>
+                    <li>Senior surveyor claim asuransi kendaraan pan pacific (2014-2016)</li>
+                    <li>Pengelola penggilingan daging UD. Baja Pak Min (2016-sekarang)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
