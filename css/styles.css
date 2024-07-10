@@ -81,13 +81,19 @@ nav ul li a:hover {
 
 .menu-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 20px; /* Jarak antara baris */
     margin-top: 30px;
 }
 
+.menu-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Jarak antara item dalam satu baris */
+}
+
 .menu-item {
-    width: calc(33.33% - 20px);
+    width: calc(50% - 10px); /* 50% lebar minus setengah dari jarak antar item */
     margin-bottom: 20px;
     position: relative;
     overflow: hidden;
