@@ -51,241 +51,215 @@ header {
     right: -150px;
 }
 
+@keyframes moveCircles {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(20px, 20px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
 .logo {
     max-width: 200px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+    margin-bottom: 10px;
 }
 
 nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin-top: 20px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
 }
 
 nav ul li {
     display: inline;
-    margin: 0 10px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #333;
+    color: #000;
     font-weight: bold;
-    transition: color 0.3s ease;
+    transition: color 0.3s;
 }
 
 nav ul li a:hover {
     color: #ff6600;
 }
 
+/* Section Styles */
+section {
+    padding: 60px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
 /* Menu Styles */
 .menu-container {
     display: flex;
-    flex-direction: column;
-    gap: 20px; /* Jarak antara baris */
-    margin-top: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
 
 .menu-row {
     display: flex;
-    justify-content: space-between;
-    gap: 20px; /* Jarak antara item dalam satu baris */
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
 
 .menu-item {
-    width: calc(50% - 10px); /* 50% lebar minus setengah dari jarak antar item */
-    margin-bottom: 20px;
-    position: relative;
-    overflow: hidden;
+    flex: 1 1 calc(50% - 20px);
+    max-width: calc(50% - 20px);
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-item:hover {
+    transform: translateY(-10px);
 }
 
 .menu-item img {
     width: 100%;
     height: auto;
-    border-radius: 10px 10px 0 0; /* Rounded corners at the top */
     object-fit: cover;
 }
 
 .menu-item-content {
-    padding: 15px;
+    padding: 20px;
     text-align: center;
 }
 
-.menu-item-content h3 {
+.menu-item h3 {
     margin-bottom: 10px;
-    font-size: 1.2rem;
-    color: #333;
+    font-size: 1.5em;
+    color: #ff6600;
 }
 
-.menu-item-content p {
-    font-size: 1rem;
+.menu-item p {
     color: #666;
 }
 
-/* Menu Image Section */
-.menu-image {
-    background-color: #fff;
-    text-align: center;
-    padding: 60px 0;
-}
-
-.menu-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* About Section */
-.about {
-    background-color: #ff6600;
-    color: #fff;
-    padding: 60px 0;
-    text-align: center;
-}
-
+/* Tentang Kami Styles */
 .about-content {
     display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
     align-items: center;
-    justify-content: space-between;
-    flex-direction: column-reverse;
-    text-align: center;
 }
 
 .about-text {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.about-text h3 {
-    margin-top: 20px;
-    font-size: 1.5rem;
-}
-
-.about-text p {
-    margin-bottom: 20px;
+    flex: 1;
 }
 
 .about-image {
+    flex: 1;
     position: relative;
-    margin-top: 20px;
-    max-width: 400px;
-    margin: 0 auto;
 }
 
 .about-image img {
     max-width: 100%;
-    height: auto;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .about-circle {
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
+    animation: moveCircles 20s infinite linear;
 }
 
 .about-circle-1 {
-    top: -50px;
-    left: -50px;
+    top: -75px;
+    left: -75px;
 }
 
 .about-circle-2 {
-    bottom: -50px;
-    right: -50px;
+    bottom: -75px;
+    right: -75px;
 }
 
-/* Contact Section */
-.contact {
-    padding: 60px 0;
-    text-align: center;
-}
-
+/* Contact Styles */
 .contact-info {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    gap: 20px;
+    justify-content: center;
 }
 
 .contact-item {
-    flex: 0 0 48%;
-    margin-bottom: 20px;
-    text-align: left;
+    flex: 1 1 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
 }
 
 .contact-item h3 {
-    font-size: 1.2rem;
     margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #ff6600;
 }
 
-.contact-item p {
-    margin-bottom: 10px;
-}
-
+.contact-item p,
 .contact-item a {
+    color: #666;
     text-decoration: none;
-    color: #333;
-    transition: color 0.3s ease;
+    transition: color 0.3s;
 }
 
 .contact-item a:hover {
     color: #ff6600;
 }
 
-.contact-item img {
-    margin-right: 10px;
-    vertical-align: middle;
-}
-
-.contact-item iframe {
-    width: 100%;
-    max-width: 100%;
-    height: 450px;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Footer */
+/* Footer Styles */
 footer {
     background-color: #333;
     color: #fff;
-    text-align: center;
     padding: 20px 0;
-    clear: both;
+    text-align: center;
     position: relative;
-    margin-top: 60px;
+    overflow: hidden;
 }
 
 .footer-circle {
     position: absolute;
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.1);
-    animation: moveCircles 20s infinite linear reverse;
+    animation: moveCircles 20s infinite linear;
 }
 
 .footer-circle-1 {
-    top: -100px;
-    left: -100px;
+    top: -150px;
+    left: -150px;
 }
 
 .footer-circle-2 {
-    bottom: -100px;
-    right: -100px;
+    bottom: -150px;
+    right: -150px;
 }
 
-.section-title {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    text-align: center;
+footer p {
+    margin: 0;
 }
